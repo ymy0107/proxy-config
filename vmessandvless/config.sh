@@ -5,5 +5,5 @@ cp /root/proxy-config/vmessandvless/v2ray-linux-64/systemd/system/v2ray.service 
 
 systemctl daemon-reload
 systemctl enable v2ray
-systemctl start v2ray
+systemctl restart v2ray
 systemctl status v2ray --no-pager
