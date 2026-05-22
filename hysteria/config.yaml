@@ -6,8 +6,8 @@ listen: :443
 #   email: 2168526598@qq.com
 
 tls:
-  cert: /etc/letsencrypt/live/verygood.us.kg/fullchain.pem
-  key: /etc/letsencrypt/live/verygood.us.kg/privkey.pem
+  cert: /etc/hysteria/certs/fullchain.pem
+  key: /etc/hysteria/certs/privkey.pem
 
 auth:
   type: password
