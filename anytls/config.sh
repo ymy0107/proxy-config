@@ -1,0 +1,1 @@
+# wget -O anytls_manager.sh https://raw.githubusercontent.com/okloorcl/AnyTLS-Go-Script/refs/heads/main/anytls_manager.sh
