@@ -29,7 +29,8 @@
             "id": "d1b05c05-2010-f4d6-c347-12f36bf62abb",
             "level": 0
           }
-        ]
+        ],
+        "decryption": "none"
       },
       "streamSettings": {
         "network": "tcp"
