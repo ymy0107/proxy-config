@@ -1,0 +1,20 @@
+listen: :443
+
+# acme:
+#   domains:
+#     - verygood.us.kg
+#   email: 2168526598@qq.com
+
+tls:
+  cert: /etc/letsencrypt/live/verygood.us.kg/fullchain.pem
+  key: /etc/letsencrypt/live/verygood.us.kg/privkey.pem
+
+auth:
+  type: password
+  password: m123456
+
+masquerade:
+  type: proxy
+  proxy:
+    url: https://www.cctv.com/
+    rewriteHost: true
