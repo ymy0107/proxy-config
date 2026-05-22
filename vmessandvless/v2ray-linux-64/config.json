@@ -10,7 +10,8 @@
         "clients": [
           {
             "id": "4d087a5c-f5f0-4020-68da-03713f6c7a1e",
-            "alterId": 0
+            "alterId": 0,
+            "level": 0
           }
         ]
       },
@@ -28,8 +29,7 @@
             "id": "d1b05c05-2010-f4d6-c347-12f36bf62abb",
             "level": 0
           }
-        ],
-        "decryption": "none"
+        ]
       },
       "streamSettings": {
         "network": "tcp"
