@@ -1,0 +1,10 @@
+{
+    "listen": ":8443",
+    "users": {
+        "76e78839-0b77-2a42-3741-e8a406648360": "m123456"
+    },
+    "certificate": "/etc/letsencrypt/live/verygood.us.kg/fullchain.pem",
+    "private_key": "/etc/letsencrypt/live/verygood.us.kg/privkey.pem",
+    "congestion_control": "bbr",
+    "log_level": "info"
+}
