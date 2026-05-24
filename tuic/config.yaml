@@ -1,0 +1,73 @@
+# ==========================================
+# 核心基础设置（纯服务端优化）
+# ==========================================
+log-level: warning
+ipv6: true
+allow-lan: true                 # 允许外部网络连接
+mode: direct                    # 👈 核心：模式设置为 direct，所有入站流量默认直连出站
+
+# 关闭所有作为客户端时才需要的本地 DNS 解析机制，完全交由操作系统处理
+dns:
+  enable: false
+
+# ==========================================
+# 入站监听器（服务端开放的接头暗号）
+# ==========================================
+listeners:
+
+  # # 1. Hysteria 2 入站设置（走 UDP）
+  # - name: hy2-inbound
+  #   type: hysteria2
+  #   port: 443                   # 外部连接端口
+  #   listen: "::"
+  #   password: "你的Hysteria2密码"
+  #   congestion-control: bbr
+  #   # 如果使用你自己的真实证书
+  #   tls:
+  #     enable: true
+  #     server-name: "yourdomain.com"
+  #     cert-path: "/etc/mihomo/certs/fullchain.pem"
+  #     key-path: "/etc/mihomo/certs/privkey.pem"
+
+  # 2. TUIC V5 入站设置（走 UDP）
+  - name: tuic-inbound
+    type: tuic
+    port: 7443                  # 外部连接端口
+    listen: "::"
+    users:
+      "68c4e40c-9910-f8d2-8a79-76737ea9dcb5": "m123456"
+    certificate: "/etc/letsencrypt/live/verygood.us.kg/fullchain.pem"
+    private-key: "/etc/letsencrypt/live/verygood.us.kg/privkey.pem"
+    max-idle-time: 15000
+    authentication-timeout: 1000
+    alpn:
+      - h3
+    max-udp-relay-packet-size: 1500
+
+  # 3. VLESS Reality 入站设置（走 TCP，无需证书，完美伪装）
+  # - name: vless-reality-inbound
+  #   type: vless
+  #   port: 2222                  # 外部连接端口
+  #   listen: "::"
+  #   users:
+  #     - uuid: "你的VLESS-UUID"
+  #       flow: xtls-rprx-vision  # 开启流控
+  #   tls:
+  #     enable: true
+  #     server-name: "www.microsoft.com" # 偷取的真实目标大站指纹
+  #     reality-opts:
+  #       # 服务端私钥，通过命令 `./mihomo x25519` 生成
+  #       private-key: "你的X25519私钥"  
+  #       short-id: ["a1b2c3d4"]  # 自定义短 ID（1-8对十六进制字符）
+  #     client-fingerprint: chrome
+
+# ==========================================
+# 极简出站与规则（纯服务端不需要复杂的策略组）
+# ==========================================
+proxies: []
+proxy-groups: []
+
+# 兜底规则：由于上面设置了 mode: direct，其实下面不写也可以
+# 但为了规避极少数全局变量异常，写上这一条可以强制所有流量直连出站
+rules:
+  - MATCH,DIRECT
