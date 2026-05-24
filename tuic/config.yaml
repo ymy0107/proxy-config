@@ -33,11 +33,12 @@ listeners:
   - name: tuic-inbound
     type: tuic
     port: 7443                  # 外部连接端口
-    listen: "::"
+    listen: 0.0.0.0
     users:
       "68c4e40c-9910-f8d2-8a79-76737ea9dcb5": "m123456"
     certificate: "/etc/letsencrypt/live/verygood.us.kg/fullchain.pem"
     private-key: "/etc/letsencrypt/live/verygood.us.kg/privkey.pem"
+    congestion-controller: bbr
     max-idle-time: 15000
     authentication-timeout: 1000
     alpn:
