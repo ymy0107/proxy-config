@@ -1,0 +1,18 @@
+# 监听的端口（Hysteria 基于 UDP）
+listen: :7443
+
+# 证书配置（指向刚刚生成的自签名证书路径）
+tls:
+  cert: /etc/hysteria/server.crt
+  key: /etc/hysteria/server.key
+
+# 认证配置（Hysteria 2 使用 password）
+auth:
+  type: password
+  password: zkqa.com
+
+masquerade:
+  type: proxy
+  proxy:
+    url: https://www.cctv.com/
+    rewriteHost: true

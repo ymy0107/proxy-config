@@ -15,3 +15,17 @@ git reset --hard origin/main
 find . -name "*.sh" -exec chmod +x {} +
 
 
+ufw --force reset
+ufw deny from 36.112.122.97 to any port 22
+ufw default allow incoming
+ufw default allow outgoing
+ufw --force enable
+
+ufw --force reset
+ufw default allow incoming
+ufw default allow outgoing
+ufw allow 22/tcp
+ufw allow 1085/tcp
+ufw allow 1086/tcp
+ufw allow 7443/udp
+ufw --force enable
