@@ -7,6 +7,13 @@ external-controller: "127.0.0.1:9090"
 secret: "123456"
 
 proxies:
+- name: "Los Angeles | ss"
+  type: ss
+  server: 34.186.149.237
+  port: 8388
+  cipher: chacha20-ietf-poly1305
+  password: "m123456"
+  udp: true
 - name: "Japan | hysteria2"
   type: hysteria2
   server: 45.129.8.133
@@ -59,6 +66,7 @@ proxy-groups:
 - name: vps
   type: select 
   proxies: 
+  - 'Los Angeles | ss'
   - 'Japan | hysteria2'
   - 'Japan | vmess'
   - 'Japan | vless'
