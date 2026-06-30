@@ -1,4 +1,3 @@
-apt update
 apt install wireguard iptables -y
 echo "" > /etc/wireguard/wg0.conf
 cp /root/proxy-config/wireguard/wg0.conf /etc/wireguard/wg0.conf
