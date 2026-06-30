@@ -1,5 +1,5 @@
 apt update
-apt install wireguard -y
+apt install wireguard iptables -y
 cp /root/proxy-config/wireguard/wg0.conf /etc/wireguard/wg0.conf
 systemctl start wg-quick@wg0
 systemctl enable wg-quick@wg0
