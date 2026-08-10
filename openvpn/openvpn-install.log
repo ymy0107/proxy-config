@@ -1,0 +1,138 @@
+2026-07-07 07:36:38 [DEBUG] Checking root privileges...
+2026-07-07 07:36:38 [DEBUG] Root check passed
+2026-07-07 07:36:38 [DEBUG] Checking TUN device availability...
+2026-07-07 07:36:38 [DEBUG] TUN device available at /dev/net/tun
+2026-07-07 07:36:38 [DEBUG] Detecting operating system...
+2026-07-07 07:36:38 [DEBUG] Detected OS: ubuntu (Ubuntu 24.04.4 LTS)
+2026-07-07 07:36:39 [INFO] === OpenVPN Non-Interactive Install ===
+2026-07-07 07:36:39 [INFO] Running in non-interactive mode with the following settings:
+2026-07-07 07:36:39 [INFO]   ENDPOINT=202.182.104.239
+2026-07-07 07:36:39 [INFO]   ENDPOINT_TYPE=4
+2026-07-07 07:36:39 [INFO]   CLIENT_IPV4=y
+2026-07-07 07:36:39 [INFO]   CLIENT_IPV6=n
+2026-07-07 07:36:39 [INFO]   VPN_SUBNET_IPV4=10.8.0.0
+2026-07-07 07:36:39 [INFO]   VPN_SUBNET_IPV6=fd42:42:42:42::
+2026-07-07 07:36:39 [INFO]   PORT=1194
+2026-07-07 07:36:39 [INFO]   PROTOCOL=udp
+2026-07-07 07:36:39 [INFO]   DNS=cloudflare
+2026-07-07 07:36:39 [INFO]   MULTI_CLIENT=n
+2026-07-07 07:36:39 [INFO]   AUTH_MODE=pki
+2026-07-07 07:36:39 [INFO]   CLIENT=client
+2026-07-07 07:36:39 [INFO]   CLIENT_CERT_DURATION_DAYS=3650
+2026-07-07 07:36:39 [INFO]   SERVER_CERT_DURATION_DAYS=3650
+2026-07-07 07:36:39 === Installing OpenVPN ===
+2026-07-07 07:36:39 [INFO] Setting up official OpenVPN repository...
+2026-07-07 07:36:39 [CMD] apt-get update
+Hit:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:2 http://ubuntu.mirror.constant.com noble InRelease
+Hit:3 http://ubuntu.mirror.constant.com noble-updates InRelease
+Hit:4 http://ubuntu.mirror.constant.com noble-backports InRelease
+Reading package lists...
+2026-07-07 07:36:43 [DEBUG] Update package lists completed successfully
+2026-07-07 07:36:43 [CMD] apt-get install -y ca-certificates curl
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20260601~24.04.1).
+ca-certificates set to manually installed.
+curl is already the newest version (8.5.0-2ubuntu10.10).
+0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
+2026-07-07 07:36:44 [DEBUG] Installing prerequisites completed successfully
+2026-07-07 07:36:44 [CMD] mkdir -p /etc/apt/keyrings
+2026-07-07 07:36:44 [DEBUG] Creating keyrings directory completed successfully
+2026-07-07 07:36:44 [CMD] curl -fsSL https://swupdate.openvpn.net/repos/repo-public.gpg -o /etc/apt/keyrings/openvpn-repo-public.asc
+2026-07-07 07:36:44 [DEBUG] Downloading OpenVPN GPG key completed successfully
+2026-07-07 07:36:44 [INFO] Updating package lists with new repository...
+2026-07-07 07:36:44 [CMD] apt-get update
+Hit:1 http://ubuntu.mirror.constant.com noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 http://ubuntu.mirror.constant.com noble-updates InRelease
+Hit:4 http://ubuntu.mirror.constant.com noble-backports InRelease
+Get:5 https://build.openvpn.net/debian/openvpn/stable noble InRelease [4,418 B]
+Get:6 https://build.openvpn.net/debian/openvpn/stable noble/main amd64 Packages [12.3 kB]
+Fetched 16.7 kB in 1s (11.8 kB/s)
+Reading package lists...
+2026-07-07 07:36:47 [DEBUG] Update package lists completed successfully
+2026-07-07 07:36:47 [INFO] OpenVPN official repository configured
+2026-07-07 07:36:47 [INFO] Installing OpenVPN and dependencies...
+2026-07-07 07:36:47 [CMD] apt-get install -y openvpn iptables openssl curl ca-certificates tar dnsutils socat
+Reading package lists...
+Building dependency tree...
+Reading state information...
+iptables is already the newest version (1.8.10-3ubuntu2).
+openssl is already the newest version (3.0.13-0ubuntu3.11).
+openssl set to manually installed.
+curl is already the newest version (8.5.0-2ubuntu10.10).
+ca-certificates is already the newest version (20260601~24.04.1).
+The following additional packages will be installed:
+  libpkcs11-helper1t64
+Suggested packages:
+  openvpn-dco-dkms openvpn-systemd-resolved easy-rsa ncompress tar-scripts
+  tar-doc
+The following NEW packages will be installed:
+  dnsutils libpkcs11-helper1t64 openvpn socat
+The following packages will be upgraded:
+  tar
+1 upgraded, 4 newly installed, 0 to remove and 10 not upgraded.
+Need to get 1,390 kB of archives.
+After this operation, 3,726 kB of additional disk space will be used.
+Get:1 http://ubuntu.mirror.constant.com noble-updates/main amd64 tar amd64 1.35+dfsg-3ubuntu0.2 [256 kB]
+Get:2 http://ubuntu.mirror.constant.com noble-updates/universe amd64 dnsutils all 1:9.18.39-0ubuntu0.24.04.5 [3,686 B]
+Get:3 http://ubuntu.mirror.constant.com noble/main amd64 libpkcs11-helper1t64 amd64 1.29.0-2.1build2 [50.3 kB]
+Get:4 http://ubuntu.mirror.constant.com noble-updates/main amd64 socat amd64 1.8.0.0-4ubuntu0.1 [374 kB]
+Get:5 https://build.openvpn.net/debian/openvpn/stable noble/main amd64 openvpn amd64 2.7.5-noble1 [705 kB]
+Preconfiguring packages ...
+Fetched 1,390 kB in 3s (533 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 93622 files and directories currently installed.)
+Preparing to unpack .../tar_1.35+dfsg-3ubuntu0.2_amd64.deb ...
+Unpacking tar (1.35+dfsg-3ubuntu0.2) over (1.35+dfsg-3ubuntu0.1) ...
+Setting up tar (1.35+dfsg-3ubuntu0.2) ...
+Selecting previously unselected package dnsutils.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 93622 files and directories currently installed.)
+Preparing to unpack .../dnsutils_1%3a9.18.39-0ubuntu0.24.04.5_all.deb ...
+Unpacking dnsutils (1:9.18.39-0ubuntu0.24.04.5) ...
+Selecting previously unselected package libpkcs11-helper1t64:amd64.
+Preparing to unpack .../libpkcs11-helper1t64_1.29.0-2.1build2_amd64.deb ...
+Unpacking libpkcs11-helper1t64:amd64 (1.29.0-2.1build2) ...
+Selecting previously unselected package openvpn.
+Preparing to unpack .../openvpn_2.7.5-noble1_amd64.deb ...
+Unpacking openvpn (2.7.5-noble1) ...
+Selecting previously unselected package socat.
+Preparing to unpack .../socat_1.8.0.0-4ubuntu0.1_amd64.deb ...
+Unpacking socat (1.8.0.0-4ubuntu0.1) ...
+Setting up dnsutils (1:9.18.39-0ubuntu0.24.04.5) ...
+Setting up socat (1.8.0.0-4ubuntu0.1) ...
+Setting up libpkcs11-helper1t64:amd64 (1.29.0-2.1build2) ...
+Setting up openvpn (2.7.5-noble1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/openvpn.service → /usr/lib/systemd/system/openvpn.service.
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-07-07 07:36:58 [DEBUG] Installing OpenVPN completed successfully
+2026-07-07 07:36:58 [INFO] Data Channel Offload (DCO) is not available (requires OpenVPN 2.6+ and kernel support)
+2026-07-07 07:36:58 [CMD] mkdir -p /etc/openvpn/server
+2026-07-07 07:36:58 [DEBUG] Creating server directory completed successfully
+2026-07-07 07:36:58 [CMD] curl -fL --retry 5 -o /tmp/easy-rsa.t6DRGE.tgz https://github.com/OpenVPN/easy-rsa/releases/download/v3.2.6/EasyRSA-3.2.6.tgz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 93543  100 93543    0     0   263k      0 --:--:-- --:--:-- --:--:--  263k
+2026-07-07 07:36:58 [DEBUG] Downloading Easy-RSA v3.2.6 completed successfully
+2026-07-07 07:36:58 [INFO] Verifying Easy-RSA checksum...
+2026-07-07 07:36:58 [CHECKSUM] /tmp/easy-rsa.t6DRGE.tgz: OK
+2026-07-07 07:36:58 [CMD] mkdir -p /etc/openvpn/server/easy-rsa
+2026-07-07 07:36:58 [DEBUG] Creating Easy-RSA directory completed successfully
+2026-07-07 07:36:58 [CMD] tar xzf /tmp/easy-rsa.t6DRGE.tgz --strip-components=1 --no-same-owner --directory /etc/openvpn/server/easy-rsa
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.com.apple.metadata:kMDItemTextContentLanguage'
+2026-07-07 07:36:58 [DEBUG] Extracting Easy-RSA completed successfully
+2026-07-07 07:36:58 [CMD] rm -f /tmp/easy-rsa.t6DRGE.tgz
+2026-07-07 07:36:58 [DEBUG] Cleaning up archive completed successfully

@@ -1,0 +1,218 @@
+2026-07-07 07:36:58 [INFO] Initializing PKI...
+2026-07-07 07:36:58 [CMD] ./easyrsa init-pki
+
+Notice
+------
+'init-pki' complete; you may now create a CA or requests.
+
+Your newly created PKI dir is:
+* /etc/openvpn/server/easy-rsa/pki
+
+IMPORTANT: PKI algorithm is 
+
+Using Easy-RSA Auto-configured 'vars' file:
+* /etc/openvpn/server/easy-rsa/vars
+
+2026-07-07 07:36:59 [DEBUG] Initializing PKI completed successfully
+2026-07-07 07:36:59 [INFO] Building CA...
+2026-07-07 07:36:59 [CMD] ./easyrsa --batch --req-cn=cn_u0aSJ76hNnzKMU8G build-ca nopass
+Using Easy-RSA 'vars' configuration:
+* /etc/openvpn/server/easy-rsa/vars
+
+Notice
+------
+CA creation complete. Your new CA certificate is at:
+* /etc/openvpn/server/easy-rsa/pki/ca.crt
+
+Build-ca completed successfully.
+
+2026-07-07 07:36:59 [DEBUG] Building CA completed successfully
+2026-07-07 07:36:59 [INFO] Building server certificate...
+2026-07-07 07:36:59 [CMD] ./easyrsa --batch build-server-full server_8r4EK251RRKLIG7i nopass
+Using Easy-RSA 'vars' configuration:
+* /etc/openvpn/server/easy-rsa/vars
+-----
+
+Notice
+------
+Private-Key and Public-Certificate-Request files created.
+Your files are:
+* req: /etc/openvpn/server/easy-rsa/pki/reqs/server_8r4EK251RRKLIG7i.req
+* key: /etc/openvpn/server/easy-rsa/pki/private/server_8r4EK251RRKLIG7i.key
+
+Using configuration from /etc/openvpn/server/easy-rsa/pki/5e5df79b/temp.02
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'server_8r4EK251RRKLIG7i'
+Certificate is to be certified until Jul  4 07:36:59 2036 GMT (3650 days)
+
+Write out database with 1 new entries
+Database updated
+
+WARNING
+=======
+INCOMPLETE Inline file created:
+* /etc/openvpn/server/easy-rsa/pki/inline/private/server_8r4EK251RRKLIG7i.inline
+
+Missing TLS Key, see 'easyrsa help gen-tls'
+
+
+Notice
+------
+Certificate created at:
+* /etc/openvpn/server/easy-rsa/pki/issued/server_8r4EK251RRKLIG7i.crt
+
+2026-07-07 07:36:59 [DEBUG] Building server certificate completed successfully
+2026-07-07 07:36:59 [CMD] ./easyrsa gen-crl
+Using Easy-RSA 'vars' configuration:
+* /etc/openvpn/server/easy-rsa/vars
+Using configuration from /etc/openvpn/server/easy-rsa/pki/93bda86e/temp.00
+
+Notice
+------
+An updated CRL DER copy has been created:
+* /etc/openvpn/server/easy-rsa/pki/crl.der
+
+An updated CRL has been created:
+* /etc/openvpn/server/easy-rsa/pki/crl.pem
+
+IMPORTANT: When the CRL expires, an OpenVPN Server which uses a
+CRL will reject ALL new connections, until the CRL is replaced.
+
+2026-07-07 07:36:59 [DEBUG] Generating CRL completed successfully
+2026-07-07 07:36:59 [INFO] Generating TLS key...
+2026-07-07 07:36:59 [CMD] openvpn --genkey tls-crypt-v2-server /etc/openvpn/server/tls-crypt-v2.key
+2026-07-07 07:36:59 [DEBUG] Generating tls-crypt-v2 server key completed successfully
+2026-07-07 07:36:59 [INFO] Copying certificates...
+2026-07-07 07:36:59 [CMD] cp pki/ca.crt pki/private/ca.key pki/issued/server_8r4EK251RRKLIG7i.crt pki/private/server_8r4EK251RRKLIG7i.key /etc/openvpn/server/easy-rsa/pki/crl.pem /etc/openvpn/server
+2026-07-07 07:36:59 [DEBUG] Copying certificates to /etc/openvpn/server completed successfully
+2026-07-07 07:36:59 [CMD] chmod 644 /etc/openvpn/server/crl.pem
+2026-07-07 07:36:59 [DEBUG] Setting CRL permissions completed successfully
+2026-07-07 07:36:59 [INFO] Generating server configuration...
+2026-07-07 07:36:59 [CMD] mkdir -p /etc/openvpn/server/ccd
+2026-07-07 07:36:59 [DEBUG] Creating client config directory completed successfully
+2026-07-07 07:36:59 [CMD] mkdir -p /var/log/openvpn
+2026-07-07 07:36:59 [DEBUG] Creating log directory completed successfully
+2026-07-07 07:36:59 [INFO] Enabling IP forwarding...
+2026-07-07 07:36:59 [CMD] mkdir -p /etc/sysctl.d
+2026-07-07 07:36:59 [DEBUG] Creating sysctl.d directory completed successfully
+2026-07-07 07:36:59 [CMD] sysctl --system
+* Applying /usr/lib/sysctl.d/10-apparmor.conf ...
+* Applying /etc/sysctl.d/10-bufferbloat.conf ...
+* Applying /etc/sysctl.d/10-console-messages.conf ...
+* Applying /etc/sysctl.d/10-ipv6-privacy.conf ...
+* Applying /etc/sysctl.d/10-kernel-hardening.conf ...
+* Applying /etc/sysctl.d/10-magic-sysrq.conf ...
+* Applying /etc/sysctl.d/10-map-count.conf ...
+* Applying /etc/sysctl.d/10-network-security.conf ...
+* Applying /etc/sysctl.d/10-ptrace.conf ...
+* Applying /etc/sysctl.d/10-zeropage.conf ...
+* Applying /usr/lib/sysctl.d/50-pid-max.conf ...
+* Applying /usr/lib/sysctl.d/90-vultr.conf ...
+* Applying /etc/sysctl.d/99-openvpn.conf ...
+* Applying /usr/lib/sysctl.d/99-protect-links.conf ...
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/99-vultr-ipv6-privacy.conf ...
+* Applying /etc/sysctl.conf ...
+kernel.apparmor_restrict_unprivileged_userns = 1
+net.core.default_qdisc = fq_codel
+kernel.printk = 4 4 1 7
+net.ipv6.conf.all.use_tempaddr = 2
+net.ipv6.conf.default.use_tempaddr = 2
+kernel.kptr_restrict = 1
+kernel.sysrq = 176
+vm.max_map_count = 1048576
+net.ipv4.conf.default.rp_filter = 2
+net.ipv4.conf.all.rp_filter = 2
+kernel.yama.ptrace_scope = 1
+vm.mmap_min_addr = 65536
+kernel.pid_max = 4194304
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
+net.ipv4.tcp_rmem = 4096 87380 33554432
+net.ipv4.tcp_wmem = 4096 87380 33554432
+net.ipv4.conf.all.arp_filter = 1
+net.ipv6.conf.enp1s0.accept_ra = 2
+net.ipv4.ip_forward = 1
+fs.protected_fifos = 1
+fs.protected_hardlinks = 1
+fs.protected_regular = 2
+fs.protected_symlinks = 1
+net.ipv6.conf.all.use_tempaddr = 0
+net.ipv6.conf.default.use_tempaddr = 0
+2026-07-07 07:36:59 [DEBUG] Applying sysctl rules completed successfully
+2026-07-07 07:36:59 [INFO] Configuring OpenVPN service...
+2026-07-07 07:36:59 [CMD] cp /usr/lib/systemd/system/openvpn-server@.service /etc/systemd/system/openvpn-server@.service
+2026-07-07 07:36:59 [DEBUG] Copying OpenVPN service file completed successfully
+2026-07-07 07:36:59 [CMD] sed -i s|LimitNPROC|#LimitNPROC| /etc/systemd/system/openvpn-server@.service
+2026-07-07 07:36:59 [DEBUG] Patching service file (LimitNPROC) completed successfully
+2026-07-07 07:36:59 [CMD] sed -i /\[Service\]/a RuntimeDirectory=openvpn-server /etc/systemd/system/openvpn-server@.service
+2026-07-07 07:36:59 [DEBUG] Patching service file (RuntimeDirectory) completed successfully
+2026-07-07 07:36:59 [CMD] systemctl daemon-reload
+2026-07-07 07:37:00 [DEBUG] Reloading systemd completed successfully
+2026-07-07 07:37:00 [CMD] systemctl enable openvpn-server@server
+Created symlink /etc/systemd/system/multi-user.target.wants/openvpn-server@server.service → /etc/systemd/system/openvpn-server@.service.
+2026-07-07 07:37:00 [DEBUG] Enabling OpenVPN service completed successfully
+2026-07-07 07:37:00 [CMD] systemctl restart openvpn-server@server
+2026-07-07 07:37:00 [DEBUG] Starting OpenVPN service completed successfully
+2026-07-07 07:37:00 [INFO] Configuring firewall rules...
+2026-07-07 07:37:00 [CMD] mkdir -p /etc/iptables
+2026-07-07 07:37:00 [DEBUG] Creating iptables directory completed successfully
+2026-07-07 07:37:00 [CMD] chmod +x /etc/iptables/add-openvpn-rules.sh
+2026-07-07 07:37:00 [DEBUG] Making add-openvpn-rules.sh executable completed successfully
+2026-07-07 07:37:00 [CMD] chmod +x /etc/iptables/rm-openvpn-rules.sh
+2026-07-07 07:37:00 [DEBUG] Making rm-openvpn-rules.sh executable completed successfully
+2026-07-07 07:37:00 [CMD] systemctl daemon-reload
+2026-07-07 07:37:01 [DEBUG] Reloading systemd completed successfully
+2026-07-07 07:37:01 [CMD] systemctl enable iptables-openvpn
+Created symlink /etc/systemd/system/multi-user.target.wants/iptables-openvpn.service → /etc/systemd/system/iptables-openvpn.service.
+2026-07-07 07:37:02 [DEBUG] Enabling iptables service completed successfully
+2026-07-07 07:37:02 [CMD] systemctl start iptables-openvpn
+2026-07-07 07:37:02 [DEBUG] Starting iptables service completed successfully
+2026-07-07 07:37:02 [INFO] Creating client template...
+2026-07-07 07:37:02 [INFO] Generating first client certificate...
+2026-07-07 07:37:02 === New Client Setup ===
+2026-07-07 07:37:02 [INFO] Generating client certificate...
+2026-07-07 07:37:02 [CMD] ./easyrsa --batch build-client-full client nopass
+Using Easy-RSA 'vars' configuration:
+* /etc/openvpn/server/easy-rsa/vars
+-----
+
+Notice
+------
+Private-Key and Public-Certificate-Request files created.
+Your files are:
+* req: /etc/openvpn/server/easy-rsa/pki/reqs/client.req
+* key: /etc/openvpn/server/easy-rsa/pki/private/client.key
+
+Using configuration from /etc/openvpn/server/easy-rsa/pki/513d8260/temp.02
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'client'
+Certificate is to be certified until Jul  4 07:37:02 2036 GMT (3650 days)
+
+Write out database with 1 new entries
+Database updated
+
+WARNING
+=======
+INCOMPLETE Inline file created:
+* /etc/openvpn/server/easy-rsa/pki/inline/private/client.inline
+
+Missing TLS Key, see 'easyrsa help gen-tls'
+
+
+Notice
+------
+Certificate created at:
+* /etc/openvpn/server/easy-rsa/pki/issued/client.crt
+
+2026-07-07 07:37:03 [DEBUG] Building client certificate completed successfully
+2026-07-07 07:37:03 [OK] Client client added and is valid for 3650 days.
+2026-07-07 07:37:03 [CMD] cp /etc/openvpn/server/client-template.txt /root/client.ovpn
+2026-07-07 07:37:03 [DEBUG] Creating client config completed successfully
+2026-07-07 07:37:03 [OK] The configuration file has been written to /root/client.ovpn.
+2026-07-07 07:37:03 [INFO] Download the .ovpn file and import it in your OpenVPN client.
+2026-07-07 07:37:03 [OK] If you want to add more clients, you simply need to run this script another time!

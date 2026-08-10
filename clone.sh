@@ -22,10 +22,11 @@ ufw default allow outgoing
 ufw --force enable
 
 ufw --force reset
-ufw default allow incoming
+ufw default deny incoming
 ufw default allow outgoing
 ufw allow 22/tcp
-ufw allow 1085/tcp
-ufw allow 1086/tcp
-ufw allow 7443/udp
+ufw allow 1194/tcp
+ufw allow 8388/tcp
+ufw allow 1194/udp
+ufw allow 5443/udp
 ufw --force enable

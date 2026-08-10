@@ -1,0 +1,92 @@
+# Easy-RSA Inline file
+# Certificate type: server
+# commonName: server_8r4EK251RRKLIG7i
+# SHA256 fingerprint:
+# 9C:C2:CA:A4:A7:98:BF:E3:88:4D:B3:D4:F3:9F:CA:2E:7F:93:03:F8:E0:8B:DA:0F:1B:65:56:84:FA:CC:CA:7E
+# Decimal serial number: 118316177650390933873722901454229990572
+
+<cert>
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            59:02:dd:f0:0e:a7:37:20:f4:2f:9d:2b:aa:21:ec:ac
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: CN=cn_u0aSJ76hNnzKMU8G
+        Validity
+            Not Before: Jul  7 07:36:59 2026 GMT
+            Not After : Jul  4 07:36:59 2036 GMT
+        Subject: CN=server_8r4EK251RRKLIG7i
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:21:e1:07:0b:6c:13:66:b8:1e:6e:d8:4d:a5:a3:
+                    2c:62:b5:7c:59:9b:7c:4a:cc:8a:9b:7c:d7:3e:38:
+                    58:a4:fe:d6:70:bc:67:89:f4:30:70:59:f5:72:cc:
+                    10:dd:6c:2e:af:02:4f:ce:da:cb:b5:94:3f:50:45:
+                    3c:ed:b5:98:35
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                00:EA:80:06:B8:16:0F:7A:DF:31:69:A7:44:F0:3E:A5:BA:F5:F5:AF
+            X509v3 Authority Key Identifier: 
+                keyid:49:C4:77:4F:9D:03:42:BF:07:FC:AA:51:74:46:CE:38:43:96:9B:11
+                DirName:/CN=cn_u0aSJ76hNnzKMU8G
+                serial:52:D9:09:01:E1:FE:8A:02:0E:EE:CD:0D:1B:C2:0C:AC:61:19:D1:CE
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+    Signature Algorithm: ecdsa-with-SHA256
+    Signature Value:
+        30:45:02:20:68:25:84:cc:6e:bb:73:f1:d3:39:45:42:bc:8e:
+        f7:17:fe:6f:d0:2e:48:9c:5f:d1:3b:0e:19:04:33:c9:dd:32:
+        02:21:00:c0:7e:70:a3:90:99:56:e3:03:e1:42:97:0a:85:34:
+        44:fc:85:02:80:4c:83:5c:98:9a:2e:4a:81:f0:05:d3:b8
+-----BEGIN CERTIFICATE-----
+MIIB6TCCAY+gAwIBAgIQWQLd8A6nNyD0L50rqiHsrDAKBggqhkjOPQQDAjAeMRww
+GgYDVQQDDBNjbl91MGFTSjc2aE5uektNVThHMB4XDTI2MDcwNzA3MzY1OVoXDTM2
+MDcwNDA3MzY1OVowIjEgMB4GA1UEAwwXc2VydmVyXzhyNEVLMjUxUlJLTElHN2kw
+WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQh4QcLbBNmuB5u2E2loyxitXxZm3xK
+zIqbfNc+OFik/tZwvGeJ9DBwWfVyzBDdbC6vAk/O2su1lD9QRTzttZg1o4GqMIGn
+MAkGA1UdEwQCMAAwHQYDVR0OBBYEFADqgAa4Fg963zFpp0TwPqW69fWvMFkGA1Ud
+IwRSMFCAFEnEd0+dA0K/B/yqUXRGzjhDlpsRoSKkIDAeMRwwGgYDVQQDDBNjbl91
+MGFTSjc2aE5uektNVThHghRS2QkB4f6KAg7uzQ0bwgysYRnRzjATBgNVHSUEDDAK
+BggrBgEFBQcDATALBgNVHQ8EBAMCBaAwCgYIKoZIzj0EAwIDSAAwRQIgaCWEzG67
+c/HTOUVCvI73F/5v0C5InF/ROw4ZBDPJ3TICIQDAfnCjkJlW4wPhQpcKhTRE/IUC
+gEyDXJiaLkqB8AXTuA==
+-----END CERTIFICATE-----
+</cert>
+
+<key>
+-----BEGIN PRIVATE KEY-----
+MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgrPGLfpYi6Z3KE/aS
+3xrZYxjVWfipfGjGf+r9s71SuiChRANCAAQh4QcLbBNmuB5u2E2loyxitXxZm3xK
+zIqbfNc+OFik/tZwvGeJ9DBwWfVyzBDdbC6vAk/O2su1lD9QRTzttZg1
+-----END PRIVATE KEY-----
+</key>
+
+<ca>
+-----BEGIN CERTIFICATE-----
+MIIB2jCCAYCgAwIBAgIUUtkJAeH+igIO7s0NG8IMrGEZ0c4wCgYIKoZIzj0EAwIw
+HjEcMBoGA1UEAwwTY25fdTBhU0o3NmhObnpLTVU4RzAeFw0yNjA3MDcwNzM2NTla
+Fw0zNjA3MDQwNzM2NTlaMB4xHDAaBgNVBAMME2NuX3UwYVNKNzZoTm56S01VOEcw
+WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS1TCf278UfZewDDw2+ZpDPEcfMKq6O
+whcNmej7MbtimTLnIulzM3TQII4JK6eA1dl1N8DWGZKnk7Tdq7Ldtlfdo4GbMIGY
+MA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFEnEd0+dA0K/B/yqUXRGzjhDlpsR
+MFkGA1UdIwRSMFCAFEnEd0+dA0K/B/yqUXRGzjhDlpsRoSKkIDAeMRwwGgYDVQQD
+DBNjbl91MGFTSjc2aE5uektNVThHghRS2QkB4f6KAg7uzQ0bwgysYRnRzjALBgNV
+HQ8EBAMCAQYwCgYIKoZIzj0EAwIDSAAwRQIgYvq2oykF8MV4bm7gOcxGZTAdsDjR
+PWcXtHUvNXwicOECIQDnX21Q9yBM8RGp34jbNweNjjXZVF/SHoYupqJkDlm5oA==
+-----END CERTIFICATE-----
+</ca>
+
+# Diffie-Hellman parameters file not required
+dh none
+
+# Easy-RSA TLS Key not found!
+
