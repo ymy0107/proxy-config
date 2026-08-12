@@ -1,0 +1,182 @@
+{
+  "log": {
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      }
+    },
+    {
+      "port": 10809,
+      "protocol": "http",
+      "settings": {}
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "Japan | ss",
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "202.182.104.239",
+            "port": 8388,
+            "method": "chacha20-ietf-poly1305",
+            "password": "m123456",
+            "ota": false
+          }
+        ]
+      }
+    },
+    {
+      "tag": "Japan | socks5",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "202.182.104.239",
+            "port": 8443,
+            "users": [
+              {
+                "user": "root",
+                "pass": "m123456"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": true,
+          "serverName": "researchworld.com"
+        }
+      }
+    },
+    {
+      "tag": "Japan | http",
+      "protocol": "http",
+      "settings": {
+        "servers": [
+          {
+            "address": "202.182.104.239",
+            "port": 5443,
+            "users": [
+              {
+                "user": "root",
+                "pass": "m123456"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": true,
+          "serverName": "researchworld.com"
+        }
+      }
+    },
+    {
+      "tag": "Japan | trojan",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "japan.qqwllkmn.qzz.io",
+            "port": 7443,
+            "password": "m123456"
+          }
+        ]
+      },
+      "streamSettings": {
+        "security": "tls",
+        "tlsSettings": {
+          "alpn": ["h2", "http/1.1"]
+        }
+      }
+    },
+    {
+      "tag": "Japan | vmess",
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "202.182.104.239",
+            "port": 1085,
+            "users": [
+              {
+                "id": "4d087a5c-f5f0-4020-68da-03713f6c7a1e",
+                "alterId": 0,
+                "security": "auto"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "tag": "Japan | vless",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "202.182.104.239",
+            "port": 1086,
+            "users": [
+              {
+                "id": "d1b05c05-2010-f4d6-c347-12f36bf62abb",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/ws"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "domain": ["domain:injections.adguard.org", "domain:local.adguard.org", "domain:local"]
+      },
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "ip": [
+          "127.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "10.0.0.0/8",
+          "17.0.0.0/8",
+          "100.64.0.0/10",
+          "224.0.0.0/4",
+          "fe80::/10"
+        ]
+      }
+    ]
+  }
+}
