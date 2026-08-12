@@ -1,6 +1,1 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptMTIzNDU2@202.182.104.239:8388#Japan%20%7C%20ss
-socks5://root:m123456@202.182.104.239:8443?tls=1&sni=researchworld.com#Japan%20%7C%20socks5
-http://root:m123456@202.182.104.239:5443?tls=1&sni=researchworld.com#Japan%20%7C%20http
-trojan://m123456@japan.qqwllkmn.qzz.io:7443?alpn=h2%2Chttp%2F1.1#Japan%20%7C%20trojan
-vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICJKYXBhbiB8IHZtZXNzIiwKICAiYWRkIjogIjIwMi4xODIuMTA0LjIzOSIsCiAgInBvcnQiOiAxMDg1LAogICJpZCI6ICI0ZDA4N2E1Yy1mNWYwLTQwMjAtNjhkYS0wMzcxM2Y2YzdhMWUiLAogICJhaWQiOiAwLAogICJzY3kiOiAiYXV0byIsCiAgIm5ldCI6ICJ0Y3AiLAogICJ0eXBlIjogIm5vbmUiLAogICJob3N0IjogIiIsCiAgInBhdGgiOiAiIiwKICAidGxzIjogIiIKfQ==
-vless://d1b05c05-2010-f4d6-c347-12f36bf62abb@202.182.104.239:1086?type=ws&path=%2Fws#Japan%20%7C%20vless
+anytls://m123456@202.182.104.239:6443?security=tls&sni=japan.qqwlkmn.qzz.io&insecure=1&allowInsecure=1&type=tcp&headerType=none#Japan%20%7C%20anytls
