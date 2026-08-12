@@ -1,11 +1,11 @@
-http proxy
-socks5
-shadowsocks
+http proxy 443->1081
+socks5 8443->1082
+shadowsocks 8388
 trojan
 vmess
-vless
-anytls
-hysteria
+vless 
+anytls 6443
+hysteria 443
 tuic
 juicity
 ssh
