@@ -131,12 +131,12 @@ if (config.outbounds && Array.isArray(config.outbounds)) {
   });
 }
 
-// 3. 导出明文节点 TXT 文件 (nodes_plain.txt)
+// 3. 导出明文节点 TXT 文件 (proxy_plain.txt)
 const plainOutput = links.join('\n');
-fs.writeFileSync('nodes_plain.txt', plainOutput, 'utf8');
-console.log('✅ 已生成明文 TXT 文件: nodes_plain.txt');
+fs.writeFileSync('proxy_plain.txt', plainOutput, 'utf8');
+console.log('✅ 已生成明文 TXT 文件: proxy_plain.txt');
 
-// 4. 导出 Base64 格式的订阅 TXT 文件 (nodes_subscription.txt)
+// 4. 导出 Base64 格式的订阅 TXT 文件 (proxy_subscription.txt)
 const base64Output = Buffer.from(plainOutput).toString('base64');
-fs.writeFileSync('nodes_subscription.txt', base64Output, 'utf8');
-console.log('✅ 已生成 Base64 订阅 TXT 文件: nodes_subscription.txt');
+fs.writeFileSync('proxy_subscription.txt', base64Output, 'utf8');
+console.log('✅ 已生成 Base64 订阅 TXT 文件: proxy_subscription.txt');
