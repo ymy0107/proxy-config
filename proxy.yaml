@@ -33,11 +33,65 @@ proxies:
           password: "m123456",
           udp: true,
       }
+    - {
+          name: "Japan | socks5",
+          type: socks5,
+          server: 202.182.104.239,
+          port: 8443,
+          tls: true,
+          skip-cert-verify: true,
+          sni: researchworld.com,
+          username: root,
+          password: m123456,
+          udp: true,
+      }
+    - {
+          name: "Japan | http",
+          type: http,
+          server: 202.182.104.239,
+          port: 5443,
+          tls: true,
+          skip-cert-verify: true,
+          sni: researchworld.com,
+          username: root,
+          password: m123456
+      }
+    - {
+          name: "Japan | trojan",
+          type: trojan,
+          server: japan.qqwllkmn.qzz.io,
+          port: 7443,
+          password: "m123456",
+          udp: true,
+          alpn: [h2,http/1.1],
+    }
+    - {
+          name: "Japan | vmess",
+          type: vmess,
+          server: 202.182.104.239,
+          port: 1085,
+          uuid: 4d087a5c-f5f0-4020-68da-03713f6c7a1e,
+          alterId: 0,
+          cipher: auto,
+          udp: true,
+    }
+    - {
+          name: "Japan | vless",
+          type: vless,
+          server: 202.182.104.239,
+          port: 1086,
+          uuid: d1b05c05-2010-f4d6-c347-12f36bf62abb,
+          udp: true,
+          network: ws,
+          ws-opts: {
+             path: /ws
+          }
+    }
 
 proxy-groups:
-    - { name: vps, type: select, proxies: [自动选择, 故障转移, 'Japan | ss'] }
-    - { name: 自动选择, type: url-test, proxies: ['Japan | ss'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: 故障转移, type: fallback, proxies: ['Japan | ss'], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+    - { name: vps, type: select, proxies: [自动选择, 故障转移, 'Japan | ss', 'Japan | socks5', 'Japan | http', 'Japan | trojan', 'Japan | vmess', 'Japan | vless'] }
+    - { name: 自动选择, type: url-test, proxies: ['Japan | ss', 'Japan | socks5', 'Japan | http', 'Japan | trojan', 'Japan | vmess', 'Japan | vless'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: 故障转移, type: fallback, proxies: ['Japan | ss', 'Japan | socks5', 'Japan | http', 'Japan | trojan', 'Japan | vmess', 'Japan | vless'], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rules:
     - 'IP-CIDR,91.108.4.0/22,vps,no-resolve'
     - 'IP-CIDR,91.108.8.0/21,vps,no-resolve'
