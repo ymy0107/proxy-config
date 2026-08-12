@@ -2,13 +2,13 @@ http proxy 5443->1081
 socks5 8443->1082
 shadowsocks 8388
 trojan 7443
-vmess
-vless 
+vmess 1085
+vless 1086
 anytls 6443
 hysteria 443
 tuic 7443
 juicity 8443
-ssh
-wireguard
+ssh 22
+wireguard 5443
 IPsec 500 4500
 OpenVPN 1194
