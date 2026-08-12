@@ -1,0 +1,15 @@
+[Unit]
+Description=Trojan Server Service
+Documentation=https://trojan-gfw.github.io/trojan/
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/trojan /etc/trojan/config.json
+Restart=on-failure
+LimitNPROC=512
+LimitNOFILE=infinity
+
+[Install]
+WantedBy=multi-user.target
