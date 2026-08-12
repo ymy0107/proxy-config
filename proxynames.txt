@@ -1,4 +1,4 @@
-http proxy 443->1081
+http proxy 5443->1081
 socks5 8443->1082
 shadowsocks 8388
 trojan 7443
@@ -6,7 +6,7 @@ vmess
 vless 
 anytls 6443
 hysteria 443
-tuic
+tuic 7443
 juicity 8443
 ssh
 wireguard
