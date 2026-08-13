@@ -1,1 +1,3 @@
-anytls://m123456@202.182.104.239:6443?security=tls&sni=japan.qqwlkmn.qzz.io&insecure=1&allowInsecure=1&type=tcp&headerType=none#Japan%20%7C%20anytls
+anytls://m123456@202.182.104.239:6443?security=tls&sni=japan.qqwllkmn.qzz.io&insecure=1&allowInsecure=1&type=tcp&headerType=none#Japan%20%7C%20anytls
+hysteria2://m123456@202.182.104.239:443?insecure=0&allowInsecure=0#Japan%20%7C%20Hysteria2
+tuic://68c4e40c-9910-f8d2-8a79-76737ea9dcb5%3Am123456@202.182.104.239:7443?alpn=h3&insecure=0&allowInsecure=0&congestion_control=bbr#Japan%20%7C%20TUIC
