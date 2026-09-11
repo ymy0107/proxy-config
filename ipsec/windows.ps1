@@ -6,3 +6,12 @@ Set-VpnConnectionIPsecConfiguration -ConnectionName "My ikev2 VPN" `
     -DHGroup Group14 `
     -PfsGroup PFS2048 `
     -Force
+
+Set-VpnConnectionIPsecConfiguration -ConnectionName "My ikev2 VPN" `
+    -AuthenticationTransformConstants SHA256 `
+    -CipherTransformConstants AES256 `
+    -EncryptionMethod AES256 `
+    -IntegrityCheckMethod SHA256 `
+    -DHGroup ECP256 `
+    -PfsGroup ECP256 `
+    -Force
